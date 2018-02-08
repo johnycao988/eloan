@@ -1,4 +1,5 @@
 FROM node
+USER root
 RUN npm install -g @angular/cli \
     npm install -g typescript   \
     npm install -g typings
