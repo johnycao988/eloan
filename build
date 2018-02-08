@@ -16,3 +16,8 @@ docker rm -f angulardemo
 docker build -t angulardemo .
 
 docker run --name angulardemo --restart=always -d  -p 4200:4200   angulardemo 
+
+kubelet delete -f 01-angulardemo.dpm.yml
+
+kubelet apply -f 01-angulardemo.dpm.yml
+
