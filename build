@@ -9,20 +9,10 @@
 
 git pull
 
+docker rmi -f angulardemo
 
-docker build -t docker.registry.cscloud.com/sso-client:1.0 .
+docker rm -f angulardemo
 
-docker push docker.registry.cscloud.com/sso-client:1.0
+docker build -t angulardemo .
 
-docker rmi docker.registry.cscloud.com/sso-client:1.0 
-
-ansible -i ./ansible-hosts k8s-ms -m command -a 'docker rmi -f docker.registry.cscloud.com/sso-client:1.0'
-
-
-kubectl delete configmap sso-client-configmap -n test
-  
-kubectl create configmap sso-client-configmap --namespace=test --from-file=./keycloak.json
-
-kubectl delete -f ./01-sso-client.dpm.yml
-
-kubectl apply -f ./01-sso-client.dpm.yml
+docker run --name angulardemo --restart=always -d  -p 4200:4200   angulardemo 
