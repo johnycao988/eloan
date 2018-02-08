@@ -1,14 +1,14 @@
 ## build csanuglar image
-FROM node
-
-# RUN npm install -g typescript   
-
+#FROM node
+#RUN npm install -g typescript   
 #RUN npm install -g typings 
-
-RUN npm install -g @angular/cli
-
+#RUN npm install -g @angular/cli
 
 
-#WORKDIR /workspace
+FROM csangular
 
-#CMD ng serve -H 0.0.0.0 --port=4200
+COPY ./dist /angulardemo
+
+WORKDIR /angulardemo
+ 
+CMD ng serve -H 0.0.0.0 --port=4200
