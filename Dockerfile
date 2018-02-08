@@ -1,8 +1,10 @@
 ## build csanuglar image
 FROM node
 
-RUN npm install -g typescript   
-RUN npm install -g typings 
+# RUN npm install -g typescript   
+
+#RUN npm install -g typings 
+
 RUN npm install -g @angular/cli
 
 
