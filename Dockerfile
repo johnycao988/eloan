@@ -7,7 +7,7 @@
 
 FROM csangular
 
-COPY ../angulardemo /angulardemo
+COPY ./ /angulardemo
 
 WORKDIR /angulardemo
  
