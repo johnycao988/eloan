@@ -15,7 +15,7 @@ docker push docker.registry.cscloud.com/angulardemo
 
 docker rmi -f docker.registry.cscloud.com/angulardemo  
 
-kubelet delete -f 01-angulardemo.dpm.yml
+kubectl delete -f 01-angulardemo.dpm.yml
 
-kubelet apply -f 01-angulardemo.dpm.yml
+kubectl apply -f 01-angulardemo.dpm.yml
 

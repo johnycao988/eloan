@@ -11,4 +11,4 @@ COPY ./ /angulardemo
 
 WORKDIR /angulardemo
  
-CMD ng serve -H angular.demo.cscloud.com --port=4200 --env=prod --public
+CMD ng serve -H 0.0.0.0 --port=4200 --env=prod --public
