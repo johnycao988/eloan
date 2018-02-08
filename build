@@ -9,13 +9,11 @@
 
 git pull
 
-docker rmi -f angulardemo
+docker build -t docker.registry.cscloud.com/angulardemo .
 
-docker rm -f angulardemo
+docker push docker.registry.cscloud.com/angulardemo
 
-docker build -t angulardemo .
-
-docker run --name angulardemo --restart=always -d  -p 4200:4200   angulardemo 
+docker rmi -f docker.registry.cscloud.com/angulardemo  
 
 kubelet delete -f 01-angulardemo.dpm.yml
 
