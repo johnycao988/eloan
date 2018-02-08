@@ -1,6 +1,6 @@
 ## build csanuglar image
 FROM node
-USER root
+USER node
 RUN mkdir -p /usr/local/lib/node_modules/@angular/cli/node_modules/node-sass/.node-gyp/9.5.0 \
     chmod 777 /usr/local/lib/node_modules/@angular/cli/node_modules/node-sass/.node-gyp/9.5.0
 RUN npm install -g typescript   \
