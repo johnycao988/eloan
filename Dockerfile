@@ -1,12 +1,8 @@
-FROM docker.io/google/nodejs-runtime
+FROM node
+RUN npm install -g @angular/cli \
+    npm install -g typescript   \
+    npm install -g typings
 
-# Create app directory
-RUN mkdir -p /home/angulardemo
-WORKDIR /home/angulardemo
+WORKDIR /workspace
 
-# Bundle app source
-COPY . /home/angulardemo
-RUN npm install
-
-EXPOSE 8888
-CMD [ "npm", "start" ]
+CMD ng serve -H 0.0.0.0 --port=4200
