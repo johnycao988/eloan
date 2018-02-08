@@ -21,7 +21,7 @@ spec:
         nodeRole: ms 
         
       containers:
-        - image: angulardemo
+        - image: docker.registry.cscloud.com/angulardemo
           name: angular-demo
    
           ports:
