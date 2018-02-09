@@ -11,4 +11,4 @@ COPY ./ /angulardemo
 
 WORKDIR /angulardemo
  
-CMD ng serve -H 0.0.0.0 --port=4200 --env=prod --public
+CMD ng serve -H 0.0.0.0 --port=4200 --env=prod --live-reload-client=angular.demo.cscloud.com --disable-host-check=true
