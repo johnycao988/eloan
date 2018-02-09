@@ -27,7 +27,7 @@ spec:
    
           ports:
             - containerPort: 4200
-            - hostPort: 4200
+              hostPort: 4200
        
 ---
 apiVersion: v1
