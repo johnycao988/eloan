@@ -1,14 +1,7 @@
-## build csanuglar image
-#FROM node
-#RUN npm install -g typescript   
-#RUN npm install -g typings 
-#RUN npm install -g @angular/cli
+FROM  docker.registry.cscloud.com/nginx
 
+COPY ./nginx-default.conf /etc/nginx/conf.d/
 
-FROM csangular
-
-COPY ./ /angulardemo
-
-WORKDIR /angulardemo
+COPY ./dist/  /usr/share/nginx/html/
  
-CMD ng serve -H 0.0.0.0 --port=4200 --env=prod --live-reload-client=angular.demo.cscloud.com --disable-host-check=true
+CMD nginx -s reload
