@@ -38,7 +38,7 @@ spec:
     k8s-app: angular-demo
   ports:
   - port: 4200
-    targetPort: 88
+    targetPort: 4200
     
 ---
 apiVersion: extensions/v1beta1
