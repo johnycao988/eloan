@@ -4,4 +4,4 @@ FROM  docker.registry.cscloud.com/nginx
 
 COPY ./dist/  /usr/share/nginx/html/
  
-CMD nginx -s reload
+
