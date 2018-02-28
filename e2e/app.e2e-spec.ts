@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
+import { AdminPage } from './app.po';
 
-describe('demo App', () => {
-  let page: AppPage;
+describe('admin App', () => {
+  let page: AdminPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new AdminPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
 });

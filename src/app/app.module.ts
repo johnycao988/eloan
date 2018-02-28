@@ -1,25 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { RouterModule } from '@angular/router';
-import { APP_ROUTES } from './app.router';
+import {LocationStrategy, CommonModule, HashLocationStrategy} from '@angular/common';
 
-import { RootComponent } from './root';
-import { CNPeopelViewComponent, CNPeopelService } from './chinese';
-import { HeroViewComponent, HeroService } from './heroes';
+import { AppComponent } from './app.component';
+
+// Routing Module
+import { AppRoutingModule } from './app.routing';
+import { FullLayoutComponent} from './layout/full-layout.component';
+import {Ng2AutoBreadCrumb} from "ng2-auto-breadcrumb";
+import {Ng2NewsListComponent} from "./components/ng2-newslist/ng2newslist.component";
+
 
 @NgModule({
-  declarations: [
-    RootComponent,
-    HeroViewComponent,
-    CNPeopelViewComponent
-  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES),
-    FormsModule // <-- import the FormsModule before binding with [(ngModel)]
+    AppRoutingModule,
+    CommonModule,
+    Ng2AutoBreadCrumb
   ],
-  providers: [HeroService, CNPeopelService],
-  bootstrap: [RootComponent]
+  declarations: [
+    FullLayoutComponent,
+    AppComponent
+  ],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
